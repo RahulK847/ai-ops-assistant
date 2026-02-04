@@ -1,5 +1,5 @@
 import os 
-from openai import OpenAi as ai 
+from openai import OpenAI as ai 
 
 client = ai(api_key=os.getenv("OPENAI_API_KEY"))
 
@@ -12,4 +12,5 @@ def call_llm(system_prompt, user_prompt):
         ],
         temperature = 0
     )
+
     return response.choices[0].message.content
